@@ -5,7 +5,7 @@
 
 ### Build: deps(gtk3-devel, vte3-devel)
 ```bash
-make build install
+make build install clean
 ```
 ### Config: in main.c
 ```c
