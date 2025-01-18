@@ -3,8 +3,8 @@
 
 
 // Config:
-const char *font = "Comic Code 21"; // example "Monospace 12";
-const char *shell = "/bin/bash"; // example "/bin/bash";
+const char *font = "Comic Code 12"; // example "Monospace 12";
+const char *shell = "/bin/fish"; // example "/bin/bash";
 
 
 
