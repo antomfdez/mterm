@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MTerm
+Comment=Minimal Terminal Emulator
+Exec=mterm
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Categories=Utility;TerminalEmulator;

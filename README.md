@@ -11,7 +11,8 @@ sudo make
 ```c
 // Config:
 const char *font = "Comic Code 21"; // example "Monospace 12";
-const char *shell = "/bin/bash"; // example "/bin/bash";
+double transparency = 0.8;          // Default transparency (80%)
+const char *shell = "/bin/fish"; // example "/bin/bash";
 ```
 
 ## Screenshots
