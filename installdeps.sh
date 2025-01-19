@@ -22,7 +22,7 @@ case $OS in
         sudo apt install -y libgtk-3-dev libvte-2.91-dev
         ;;
     "fedora")
-        sudo dnf install -y gtk3-devel vte3-devel
+        sudo dnf install -y gtk3-devel vte291-devel.x86_64
         ;;
     "centos" | "rhel" | "rocky")
         sudo yum install -y gtk3-devel vte3-devel

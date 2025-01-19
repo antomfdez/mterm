@@ -19,8 +19,8 @@ static void on_paste_clipboard(GtkWidget *widget, gpointer data) {
   GtkClipboard *clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
   gchar *text = gtk_clipboard_wait_for_text(clipboard);
   if (text) {
-	vte_terminal_feed(VTE_TERMINAL(terminal), text, strlen(text)); // Paste the text
-	g_free(text); // Free the clipboard text
+    vte_terminal_feed(VTE_TERMINAL(terminal), text, strlen(text)); // Paste the text
+    g_free(text); // Free the clipboard text
   }
 }
 
@@ -32,7 +32,7 @@ static void activate(GtkApplication *app, gpointer user_data) {
   // Check if an argument was provided for the -e option (command to execute)
   int argc = user_data ? 1 : 0; // User data will be passed as an argument
   if (argc > 0) {
-	command = (char *)user_data; // Use the provided command
+    command = (char *)user_data; // Use the provided command
   }
 
   // Create a new window
@@ -44,8 +44,8 @@ static void activate(GtkApplication *app, gpointer user_data) {
   GdkScreen *screen = gtk_window_get_screen(GTK_WINDOW(window));
   GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
   if (visual != NULL && gdk_screen_is_composited(screen)) {
-	gtk_widget_set_visual(window, visual); // Enable transparency
-	gtk_widget_set_app_paintable(window, TRUE);
+    gtk_widget_set_visual(window, visual); // Enable transparency
+    gtk_widget_set_app_paintable(window, TRUE);
   }
 
   // Create a new VTE terminal widget
@@ -58,16 +58,16 @@ static void activate(GtkApplication *app, gpointer user_data) {
   const char *argv[] = {command, NULL};
   vte_terminal_spawn_async(
 	VTE_TERMINAL(terminal),    // terminal widget
-						   VTE_PTY_DEFAULT,           // default pseudo terminal
-						   home_dir,                  // set working directory to home directory
-						   (char **)argv,             // command (e.g., "/bin/fish")
-  NULL,                      // environment
-  0,                         // spawn flags
-  NULL, NULL,                // child setup
-  NULL,                      // child setup data
-  -1,                        // timeout
-  NULL,                      // cancellable
-  NULL, NULL                 // user data
+      VTE_PTY_DEFAULT,           // default pseudo terminal
+      home_dir,                  // set working directory to home directory
+      (char **)argv,             // command (e.g., "/bin/fish")
+      NULL,                      // environment
+      0,                         // spawn flags
+      NULL, NULL,                // child setup
+      NULL,                      // child setup data
+      -1,                        // timeout
+      NULL,                      // cancellable
+      NULL, NULL                 // user data
   );
 
   // Set the terminal font
